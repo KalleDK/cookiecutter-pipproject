@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 from os import path
 
-# Getting version
-with open('{{cookiecutter.app_name}}/version.py', encoding='utf-8') as f:
-    exec(f.read())
-
 here = path.abspath(path.dirname(__file__))
+
+# Getting version
+with open(path.join(here, '{{cookiecutter.app_name}}', 'version.py'), encoding='utf-8') as f:
+    exec(f.read())
 
 # Get the long description from the file
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
