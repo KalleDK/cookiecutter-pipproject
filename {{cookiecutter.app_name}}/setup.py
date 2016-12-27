@@ -35,5 +35,7 @@ setup(
     include_package_data=True,
     author='{{cookiecutter.full_name}}',
     install_requires=install_requires,
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest'],
     author_email='{{cookiecutter.email}}'
 )
