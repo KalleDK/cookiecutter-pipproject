@@ -67,4 +67,4 @@ patch: VERSION = patch
 patch: bump
 
 bump:
-        @bumpversion --config-file setup.cfg ${VERSION}
+	@bumpversion --config-file setup.cfg ${VERSION}
