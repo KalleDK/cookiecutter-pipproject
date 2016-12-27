@@ -24,7 +24,7 @@ clean-pyc:
 	find . -name '*~' -exec rm -f {} +
 
 lint:
-	flake8 {{ cookiecutter.repo_name }} test
+	flake8 {{ cookiecutter.app_name }} test
 
 test:
 	py.test
@@ -39,7 +39,7 @@ coverage:
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/{{ cookiecutter.repo_name }}.rst
+	rm -f docs/{{ cookiecutter.app_name }}.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.app_name }}
 	$(MAKE) -C docs clean
