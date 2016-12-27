@@ -10,7 +10,9 @@
 # Packages
 *.egg
 *.egg-info
+.eggs
 build
+dist
 eggs
 parts
 bin
