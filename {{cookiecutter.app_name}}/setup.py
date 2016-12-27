@@ -7,8 +7,8 @@ with open('{{cookiecutter.app_name}}/version.py', encoding='utf-8') as f:
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+# Get the long description from the file
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 # Get the dependencies and installs
