@@ -1,4 +1,6 @@
-.PHONY: help clean clean-pyc clean-build list test test-all coverage docs release sdist
+VERSION=patch
+
+.PHONY: help clean clean-pyc clean-build list test test-all coverage docs release sdist major minor patch
 
 help:
 	@echo "clean-build - remove build artifacts"
@@ -54,3 +56,15 @@ sdist: clean
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist
+
+major: VERSION = major
+major: bump
+
+minor: VERSION = minor
+minor: bump
+
+patch: VERSION = patch
+patch: bump
+
+bump:
+        @bumpversion --config-file setup.cfg ${VERSION}
