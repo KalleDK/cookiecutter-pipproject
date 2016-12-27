@@ -1,6 +1,6 @@
 VERSION=patch
 
-.PHONY: help clean clean-pyc clean-build list test test-all coverage docs release sdist major minor patch
+.PHONY: help clean clean-pyc clean-build list test test-all coverage docs release sdist major minor patch upload
 
 help:
 	@echo "clean-build - remove build artifacts"
@@ -48,9 +48,12 @@ docs:
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html
 
+upload: patch release
+	twine upload dist/* -r testpypi
+
 release: clean
-	python setup.py sdist upload
-	python setup.py bdist_wheel upload
+	python setup.py sdist
+	python setup.py bdist_wheel
 
 sdist: clean
 	python setup.py sdist
